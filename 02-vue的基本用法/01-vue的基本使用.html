@@ -9,6 +9,11 @@
     <!-- 模板语法-->
     <h2>{{ msg }}</h2>
     <h3>{{ 'Hello World' }}</h3>
+    <h3>{{ 1+1 }}</h3>
+    <h4>{{ {'name':"alex"} }}</h4>
+    <h5>{{ person.name }}</h5>
+    <h5>{{ 1>2? '真的':'假的' }}</h5>
+    <h5>{{ msg2.split('').reverse().join('') }}</h5>
 </div>
 <!--1,引包-->
 <script src="./vue.js"></script>
@@ -17,7 +22,11 @@
  new Vue({
      el: '#app',
      data:{
-         msg:'黄瓜'
+         msg:'黄瓜',
+         person:{
+             "name":"wusir"
+         },
+         msg2: 'Hello World'
      }
  })
 </script>
