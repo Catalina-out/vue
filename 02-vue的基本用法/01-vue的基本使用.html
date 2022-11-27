@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!-- 模板语法-->
+    <h2>{{ msg }}</h2>
+</div>
+<!--1,引包-->
+<script src="./vue.js"></script>
+<script>
+    // 实例化对象
+ new Vue({
+     el: '#app',
+     data:{
+         msg:'黄瓜'
+     }
+ })
+</script>
+</body>
+</html>
