@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function add(x){
+        console.log(x)
+    }
+    add(15)
+    // ES6 支持这种方式的定义函数
+    let add2 = (x) => {
+        console.log(x)
+    }
+    add2(20)
+    let add3 = x => x;
+    console.log(add3(30))
+</script>
+</body>
+</html>
