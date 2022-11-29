@@ -15,6 +15,7 @@
 <div id="content">
     {{ add(2,3) }}
     <div class="box" v-show = "isShow"></div>
+    <button v-on:click="handlerClick">隐藏</button>
 </div>
 <!--1,引包-->
 <script src="./vue.js"></script>
@@ -27,12 +28,19 @@
             return {
                 msg: "<h2>alex</h2>",
                 // isShow: 1==1
+                // isShow: true
+                num:2,
                 isShow: true
             }
         },
         methods:{
             add (x,y){
                 return x+y
+            },
+            handlerClick() {
+                // 数据驱动
+                console.log(this)
+                this.isShow = !this.isShow
             }
         }
     })
