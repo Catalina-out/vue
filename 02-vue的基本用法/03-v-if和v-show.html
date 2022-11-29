@@ -9,12 +9,18 @@
             height: 200px;
             background-color: red;
         }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
     </style>
 </head>
 <body>
 <div id="content">
     {{ add(2,3) }}
     <div class="box" v-show = "isShow"></div>
+    <div class="box2" v-if = "isShow"></div>
     <button v-on:click="handlerClick">隐藏</button>
 </div>
 <!--1,引包-->
