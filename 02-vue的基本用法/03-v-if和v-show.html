@@ -22,6 +22,12 @@
     <div class="box" v-show = "isShow"></div>
     <div class="box2" v-if = "isShow"></div>
     <button v-on:click="handlerClick">隐藏</button>
+    <div v-if="Math.random() > 0.5">
+        Now you see me
+    </div>
+    <div v-else>
+        Now you don't see me
+    </div>
 </div>
 <!--1,引包-->
 <script src="./vue.js"></script>
