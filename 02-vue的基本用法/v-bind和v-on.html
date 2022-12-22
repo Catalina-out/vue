@@ -9,7 +9,7 @@
       height: 200px;
       background-color: red;
     }
-    .box2{
+    .active{
       width: 200px;
       height: 200px;
       background-color: green;
@@ -19,7 +19,8 @@
 <body>
 <div id="content">
  <!--v-bind 标签中所有的属性，img标签src alt, a标签的href title id class-->
-  <img v-bind:src="imgSrc" v-bind:alt="msg">
+    <button v-on:click = 'handlerChange'>切换颜色</button>
+    <div class="box" v-bind:class = '{active:isActive}'></div>
 </div>
 <!--1,引包-->
 <script src="./vue.js"></script>
@@ -31,13 +32,20 @@
       // 数据驱动视图 设计模式 MVVM Model View ViewModel
     data () {
       return {
-        imgSrc: './a1e4ef76cfb7.jpg',
+          imgSrc: './a1e4ef76cfb7.jpg',
           msg: '美女',
-        num:2,
-        isShow: true,
+          num: 2,
+          isShow: true,
+          isActive: true
 
       }
-    }
+    },
+      methods:{
+          handlerChange(){
+              this.isActive = !this.isActive
+          }
+
+      }
   })
 </script>
 </body>
