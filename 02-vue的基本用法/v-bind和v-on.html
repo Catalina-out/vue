@@ -19,12 +19,16 @@
 <body>
 <div id="content">
  <!--v-bind 标签中所有的属性，img标签src alt, a标签的href title id class-->
-    <button v-on:click = 'handlerChange'>切换颜色</button>
-    <div class="box" v-bind:class = '{active:isActive}'></div>
+<!--    <button v-on:click = 'handlerChange'>切换颜色</button>-->
+<!--    <div class="box" v-bind:class = '{active:isActive}'></div>-->
+    <button @mouseenter = 'handlerChange' @mouseleave="handlerLeave">切换颜色</button>
+    <div class="box" :class = '{active:isActive}'></div>
 </div>
 <!--1,引包-->
 <script src="./vue.js"></script>
 <script>
+    // 声明式的javascript 框架
+    // v-bind 和 v-on 的简便写法 :@
   // 实例化对象
   new Vue({
     el: '#content',
@@ -42,7 +46,11 @@
     },
       methods:{
           handlerChange(){
-              this.isActive = !this.isActive
+              // this.isActive = !this.isActive
+              this.isActive = false
+          },
+          handlerLeave(){
+              this.isActive = true
           }
 
       }
