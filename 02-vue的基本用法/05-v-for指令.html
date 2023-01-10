@@ -3,8 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        .active{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+    </style>
 </head>
 <body>
+<div id="content">
+    <ul v-if="data.status == 'ok'">
+        <!---v-for的优先级最高 diff算法-->
+        <li v-for = '(item,index) in data.users' :key="item.id">
+            <h3>{{ item.id }}-- {{ item.name }}--{{ item.age }}</h3>
+        </li>
+    </ul>
+    <div v-for = '(value, key) in person'>
+        {{ value }}--{{ key }}
+    </div>
+</div>
+<!--1,引包-->
+<script src="./vue.js"></script>
+<script>
+    // 声明式的javascript 框架
+    // v-bind 和 v-on 的简便写法 :@
+    // 实例化对象
+    new Vue({
+        el: '#content',
+        // data中是一个函数，函数中return一个对象，可以是空对象，但不能不return
+        // 数据驱动视图 设计模式 MVVM Model View ViewModel
+        data () {
+            return {
+                data: {
+                    status: 'ok',
+                    users:[{id:1, name:'alex', age:18},{id:2, name:'blex', age:20}]
+                },
+                person:{
+                    name:'金角大王'
+                }
+            }
+        },
+        methods:{
 
+        }
+    })
+</script>
 </body>
 </html>
