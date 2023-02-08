@@ -28,8 +28,14 @@
         methods:{
             nextHandler(){
                 this.currentIndex++
+                if (this.currentIndex == 3){
+                    this.currentIndex = 0
+                }
             },
             prevHandler(){
+                if (this.currentIndex == 0){
+                    this.currentIndex = 3
+                }
                 this.currentIndex--
             }
         }
