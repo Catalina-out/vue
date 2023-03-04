@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <p>{{ myMsg }}</p>
+    <button @click="motidyHandler()">修改</button>
+</div>
+<script src="vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data(){
+            return {
+                msg:'alex'
+            }
+        },
+        methods:{
+            motidyHandler(){
+                this.msg = 'wusir'
+            }
+        },
+        computed:{
+           myMsg:function (){
+               // 计算属性默认只有getter方法
+               return `我的名字叫${this.msg}`
+           }
+        }
+    })
+</script>
+</body>
+</html>
