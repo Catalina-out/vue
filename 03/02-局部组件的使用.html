@@ -9,7 +9,18 @@
 
 </div>
 <script src="vue.js"></script>
+<!--slot 是vue中提供的内置组件-->
 <script>
+    Vue.component('VBtn',{
+        data(){
+            return {
+
+            }
+        },
+        template:`<button>
+        <slot></slot>
+</button>`
+    })
   let App = {
             data(){
               return {
@@ -19,6 +30,10 @@
             template:`
             <div>
                 <h2> {{ text }} </h2>
+                <VBtn>登录</VBtn>
+                <VBtn>注册</VBtn>
+                <VBtn>提交</VBtn>
+                <VBtn>删除</VBtn>
             </div>
             `
           }
