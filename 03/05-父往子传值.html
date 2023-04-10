@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+
+</div>
+<script src="vue.js"></script>
+<!--slot 是vue中提供的内置组件-->
+<script>
+  let Vheader = {
+    data(){
+      return {
+
+      }
+    },
+    props:['msg','post'],
+    template:`
+      <div>
+        <h2>奉天</h2>
+        <h2>{{ msg }}</h2>
+        <h2>{{ post.title }}</h2>
+</div>
+    `,
+  }
+  let App = {
+    data(){
+      return {
+        text:"我是父组件的数据",
+        post:{
+          id:1,
+          title:'Journal'
+        }
+      }
+    },
+    template:`
+            <div>
+                <Vheader :msg = 'text' v-bind:post = 'post'></Vheader>
+            </div>
+            `,
+    methods:{
+
+    },
+    components:{
+      Vheader
+    }
+
+  }
+  new Vue({
+    // 如果仅仅是实例化Vue 对象中 既有el 又有template 如果template中定义模板的内容
+    // 那么 template模板的优先级大于el
+    // App header aside content
+    // 1. 声子 Vue中组件的名字 首字母要大写 跟标签区分 组件中的data必须是个函数
+    el:"#app",
+    data(){
+      return {
+        msg:"alex"
+      }
+    },
+    template:`
+      <div class="app">
+<!--        <h2>{{ msg }}</h2>-->
+           <App/>
+      </div>
+    `,
+    components:{
+      App
+    }
+  })
+</script>
+</body>
+</html>
