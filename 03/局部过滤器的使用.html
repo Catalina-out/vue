@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <App/>
+</div>
+
+<script src="vue.js"></script>
+<script>
+  let App={
+    data(){
+      return {
+          msg:"hello world"
+      }
+    },
+    template:`
+      <div>我是一个APP {{ msg | myReverse}}</div>
+    `,
+    filters:{
+      myReverse:function(val){
+          console.log(val)
+      }
+    }
+  }
+  new Vue({
+    el:'#app',
+    data(){
+      return {
+
+      }
+    },
+    components:{
+      App
+    }
+  })
+</script>
+</body>
+</html>
